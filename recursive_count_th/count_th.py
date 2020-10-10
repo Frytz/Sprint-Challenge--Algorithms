@@ -9,6 +9,7 @@ Your function must utilize recursion. It cannot contain any loops.
 
 def count_th(word):
     #if the length is less then 2 "th" cannot exist
+    #base
     if (len(word) < 2):
         return 0
     #if the first 2 letters are "th"
