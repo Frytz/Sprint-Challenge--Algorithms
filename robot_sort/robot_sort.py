@@ -97,7 +97,27 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        self.set_light_on()
+        # grab item 
+        self.swap_item()
+        # loop while light is on
+        while self.light_is_on():
+        # check for movement capabilities
+            while self.can_move_right():
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+            if self.compare_item() is None:
+                self.swap_item()
+                self.set_light_off()
+            else:
+                while self.can_move_left():
+                    self.move_left()
+                    if self.compare_item() is None:
+                        self.swap_item()
+                        self.move_right()
+                        self.swap_item()
+                        break
 
 
 if __name__ == "__main__":
